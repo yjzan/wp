@@ -1019,7 +1019,7 @@
                 this.refreshContent();
             },
 
-            /**
+            /** 文章默认图片尺寸
              * Reset the attachment display settings defaults to the site options.
              *
              * If site options don't define them, fall back to a persistent user setting.
@@ -1031,7 +1031,7 @@
                 this._displays = [];
                 this._defaultDisplaySettings = {
                     align: getUserSetting( 'align', defaultProps.align ) || 'none',
-                    size:  getUserSetting( 'imgsize', defaultProps.size ) || 'medium',
+                    size:  getUserSetting( 'imgsize', defaultProps.size ) || 'large',
                     link:  getUserSetting( 'urlbutton', defaultProps.link ) || 'none'
                 };
             },
@@ -5488,9 +5488,16 @@
                 //检查系统图片 , 上传选中的图片
                 if(this.controller.content._mode == 'yjzlib')
                 {
+                    var buttonhtml =  $('.media-toolbar-primary .button').html();
+                    $('.media-toolbar-primary .button').html("加载中  <img src='https://cdn.jsdelivr.net/gh/yjzan/WPPACKLIB@latest/images/loading.gif'>");
+
                     var yjz_models = this.controller.state().attributes.selection.models;
 
                     var result_data=  this.upload_yjz_img(yjz_models);
+                    if(result_data==null)
+                    {
+                        result_data =  this.upload_yjz_img(yjz_models);
+                    }
 
                     if(result_data!=null)
                     {
@@ -5500,8 +5507,10 @@
                             yjz_models[i].id=result_data[i].id;
                         }
                     }
-                    console.log('存储易极赞图片');
+                    //console.log('存储易极赞图片');
+                    $(".yjz-system-pic-selected").removeClass('details selected yjz-system-pic-selected');
                     this.controller.state().attributes.selection.models = yjz_models;
+                    $('.media-toolbar-primary .button').html(buttonhtml);
                 }
 
                 this.options.click.apply( this, arguments );
@@ -5539,7 +5548,10 @@
                         {
                             result_data =  rs_data.data;
                         }else
+                        {
                             return null;
+                        }
+
                     },//end success
                     error:function(xhr,state,errorThrown){
                         console.log('upload faile!!');
@@ -9420,7 +9432,9 @@
                     $(".yjz-piclib-box").scroll(this.loadNextPageData);
 
                     //insert ,gallery,playlist,video-playlist,featured-image  窗口状态
-                    $("#yjz-state").val(this.controller.options.multiple);
+
+
+                    $("#yjz-state").val(this.controller.options.multiple||this.controller.options.states[0].attributes.multiple);
                     var attachmentType= typeof(this.collection.props.attributes.type)=='undefined' ? 'image': this.collection.props.attributes.type;
 
                     $("#yjz-attachment-type").val(attachmentType);
@@ -9519,6 +9533,11 @@
             },pic_box_click_multiple:function (pic_url,is_selected,obj) {
                 var collection = this.collection,
                     selection = this.options.selection;
+
+                if(pic_url== undefined || pic_url== '')
+                {
+                    return;
+                }
                 var img_model =this.yjz_img_model(pic_url,null);
                 if(is_selected)//被选中
                 {
