@@ -154,7 +154,9 @@ p {
 }
 
 .login #nav {
-	margin: 24px 0 0 0;
+	margin: -35px -8px 0 0;
+	float: right;
+	font-size: 12px;
 }
 
 #backtoblog {
@@ -269,3 +271,6 @@ body.interim-login {
 	margin-top: -40px;
 	margin-right: 15px;
 }
+
+.wp-wx-login-form{width:320px;margin:auto;padding:0 24px;box-sizing:border-box;position: relative;top: -88px;}
+.wp-wx-login-form a{text-decoration: none;font-size: 12px;}
