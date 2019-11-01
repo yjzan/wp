@@ -962,6 +962,7 @@ form.initial-form.quickpress-open input#title {
 	min-height: 50px;
 	margin: 0;
 	padding: 12px;
+	border-bottom: 1px solid rgba(181, 180, 180, 0.26);
 }
 
 #latest-comments #the-comment-list .pingback {

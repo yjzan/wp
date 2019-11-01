@@ -272,5 +272,5 @@ body.interim-login {
 	margin-right: 15px;
 }
 
-.wp-wx-login-form{width:320px;margin:auto;padding:0 24px;box-sizing:border-box;position: relative;top: -88px;}
+.wp-wx-login-form{width: 85px;margin:auto;box-sizing:border-box;position: relative;top: -88px;right: 92px;}
 .wp-wx-login-form a{text-decoration: none;font-size: 12px;}

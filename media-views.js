@@ -9433,8 +9433,8 @@
 
                     //insert ,gallery,playlist,video-playlist,featured-image  窗口状态
 
-
-                    $("#yjz-state").val(this.controller.options.multiple||this.controller.options.states[0].attributes.multiple);
+                    $("#yjz-state").val(this.controller.options.multiple||
+                        ('undefined' !== typeof this.controller.options.states &&this.controller.options.states[0].attributes.multiple));
                     var attachmentType= typeof(this.collection.props.attributes.type)=='undefined' ? 'image': this.collection.props.attributes.type;
 
                     $("#yjz-attachment-type").val(attachmentType);
@@ -9442,9 +9442,9 @@
                     //加载图片
                     if(this.collection.props.attributes.type=='video')
                     {
-                        load_pic_data('all','video');
                         $(".yjz-pic-type").hide();
                         $(".yjz-video-type").show();
+                        load_pic_data('all','video');
                     }else if(this.collection.props.attributes.type == 'audio'){
                         $(".yjz-piclib-toolbar").hide();
                     }else //image
@@ -9463,6 +9463,8 @@
                 var scrollTop = $(".yjz-piclib-box" )[0].scrollTop;
                 var divHeight = $(".yjz-piclib-box")[0].clientHeight;
                 var scrollHeight  = $(".yjz-piclib-box")[0].scrollHeight;
+                // console.log('scrollTop + divHeight:'+scrollTop + divHeight);
+                // console.log('\nscrollHeight:'+ scrollHeight);
                 if (scrollTop!=0 && (scrollTop + divHeight  >= scrollHeight)) {
                     var atType =  $("#yjz-attachment-type").val();
                     if(atType =='image')

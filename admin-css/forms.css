@@ -224,16 +224,16 @@ textarea[readonly] {
 }
 
 ::-webkit-input-placeholder {
-	color: #72777c;
+	color: #b5b8bc;
 }
 
 ::-moz-placeholder {
-   color: #72777c;
+   color: #b5b8bc;
    opacity: 1;
 }
 
 :-ms-input-placeholder {
-	color: #72777c;
+	color: #b5b8bc;
 }
 
 .form-invalid input, .form-invalid input:focus,
@@ -1574,3 +1574,7 @@ table.form-table td .updated p {
 		transform: rotate(359deg);
 	}
 }
+.input-text-wrap .shipping_class {margin-left: 32px;}
+.manage_stock_field .manage_stock input {margin-left: 9px;}
+#product_cat_thumbnail img {object-fit: cover;object-position: center;}
+
