@@ -343,6 +343,7 @@ td.plugin-title strong {
     display: block;
     margin-bottom: .2em;
     font-size: 14px;
+    padding-top: 5px;
 }
 
 td.column-title p,

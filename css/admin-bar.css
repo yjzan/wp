@@ -423,14 +423,7 @@ html:lang(he-il) .rtl #wpadminbar *  {
     background: none;
 }
 
-#wp-admin-bar-user-info .avatar {
-    position: absolute;
-    left: -72px;
-    top: 4px;
-    width: 64px;
-    height: 64px;
-    border: 2px solid #fff;background-color:#fff;border-radius:64px;
-}
+#wp-admin-bar-user-info .avatar{position:absolute;left:30px;top:20px;width:45px;height:45px;border: 2px solid #fff;background-color:#fff;border-radius:64px;}
 #wp-admin-bar-user-info .avatar:hover
 {
     border: 2px solid #fff;background-color:#fff;border-radius:64px;

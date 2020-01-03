@@ -3961,3 +3961,12 @@ img {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+.postbox .hndle.ui-sortable-handle {
+	height: 35px;
+	line-height: 35px;
+	background:#0888C4;
+	color:#fff;
+}
+.postbox .toggle-indicator {
+	color:#eee;
+}
