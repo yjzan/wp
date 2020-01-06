@@ -279,6 +279,10 @@ body.interim-login {
 .yjz-login-img img{
     width: 100%;
 }
+.wp-wx-wx-login-page {
+    margin: -36px 169px 0 0;
+    float: right;
+}
 
 @media (min-width:765px){
 
@@ -328,6 +332,11 @@ body.interim-login {
 }
 
 @media (max-width:765px){
+    .wp-wx-wx-login-page {
+        margin: -31px 144px 0 0!important;
+        float: right;
+    }
+
     .wp-wx-login-form{position: absolute;margin: -31px 0px 0px 198px !important;}
     .login #nav {
         margin: -30px -12px 0 0;
