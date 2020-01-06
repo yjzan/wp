@@ -4,7 +4,7 @@ window._bd_share_main ? window._bd_share_is_recently_loaded = !0 : (window._bd_s
 	version: "2.0",
 	jscfg: {
 		domain: {
-			staticUrl: "https://cdn.jsdelivr.net/gh/yjzan/wp/"
+			staticUrl: "https://img.yjzan.com/yjzanlib/wp/"
 		}
 	}
 }), !window._bd_share_is_recently_loaded && (window._bd_share_main.F = window._bd_share_main.F ||
@@ -127,7 +127,7 @@ function(e, t) {
 		load: function() {
 			s.loadingPaths[this.path] = !0;
 			var t = this.svnMod || d,
-				n = "https://cdn.jsdelivr.net/gh/yjzan/wp/baidushare/",
+				n = "https://img.yjzan.com/yjzanlib/wp/baidushare/",
 				i = this,
 				a = /\.css(?:\?|$)/i.test(this.name);
 			this.type = a ? "css" : "js";
