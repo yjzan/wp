@@ -106,7 +106,8 @@ p {
 .login form .forgetmenot {
     font-weight: 400;
     float: left;
-    margin-bottom: 0;
+    margin-bottom: 0px;
+    margin-top: 10px;
 }
 .login form  #wp-submit
 {
@@ -271,17 +272,20 @@ body.interim-login {
     right: 12px;
 }
 
-.wp-wx-login-form{position: absolute;margin: -36px 0px 0px 198px;}
-.wp-wx-login-form a{text-decoration: none;font-size: 12px;}
 
-
-.yjz-login-img{width:600px}
+.yjz-login-img{
+    width: 600px;
+    height: 600px;
+    max-height: 600px;
+    overflow: hidden;
+}
 .yjz-login-img img{
     width: 100%;
 }
-.wp-wx-wx-login-page {
-    margin: -36px 169px 0 0;
-    float: right;
+.wxicon i.fa-weixin {
+    color:#33ac11;
+    font-size: 15px;
+    margin-right: 5px;
 }
 
 @media (min-width:765px){
@@ -332,16 +336,6 @@ body.interim-login {
 }
 
 @media (max-width:765px){
-    .wp-wx-wx-login-page {
-        margin: -31px 144px 0 0!important;
-        float: right;
-    }
-
-    .wp-wx-login-form{position: absolute;margin: -31px 0px 0px 198px !important;}
-    .login #nav {
-        margin: -30px -12px 0 0;
-    }
-
     .yjz-login-img {
         display: none;
     }
@@ -381,10 +375,6 @@ body.interim-login {
     }
 }
 
-
-.login form .forgetmenot #rememberme {
-    display: none;
-}
 
 .login #loginform input {
     border-radius: 5px;

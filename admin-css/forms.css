@@ -1578,3 +1578,6 @@ table.form-table td .updated p {
 .manage_stock_field .manage_stock input {margin-left: 9px;}
 #product_cat_thumbnail img {object-fit: cover;object-position: center;}
 
+tr.wp_weixin-main-section th ,tr.wp_weixin-mini-wx-section th ,tr.wp_weixin-ecommerce-section th,tr.wp_weixin-notice-section th{
+	font-weight: inherit!important;
+}

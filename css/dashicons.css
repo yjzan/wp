@@ -1024,3 +1024,23 @@
 .dashicons-paperclip:before {
 	content: "\f546";
 }
+
+.dashicons-admin-weixin:before{
+	content: "\f1d7";
+	font-family: 'FontAwesome';
+	font-size: 16px;
+}
+
+.dashicons-admin-cp:before{
+	content: "\f009";
+	font-family: 'FontAwesome';
+	font-size: 16px;
+}
+
+.dashicons-admin-dzsc:before{
+	content: "\f290";
+	font-family: 'FontAwesome';
+	font-size: 16px;
+}
+
+

@@ -85,7 +85,7 @@ html:lang(he-il) .rtl #wpadminbar *  {
 	left: 0;
 	width: 100%;
 	min-width: 600px; /* match the min-width of the body in wp-admin.css */
-	z-index: 99999;
+	z-index: 998;
 	background: #23282d;
 }
 
@@ -99,7 +99,7 @@ html:lang(he-il) .rtl #wpadminbar *  {
 	padding: 0;
 	position: relative;
 	text-indent: 0;
-	z-index: 99999;
+	z-index: 998;
 }
 
 #wpadminbar ul#wp-admin-bar-root-default>li {
