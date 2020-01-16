@@ -50,6 +50,10 @@ p {
     line-height: 1.5;
 }
 
+.yjz-login-div p{
+    line-height: 10px!important;
+}
+
 .login .message,
 .login .success,
 .login #login_error {
@@ -189,10 +193,10 @@ p {
 
 .login form .input,
 .login input[type="text"] {
-    font-size: 24px;
+    font-size: 20px;
     width: 100%;
     padding: 3px;
-    margin: 2px 6px 16px 0;
+    margin: 2px 6px 12px 0;
 }
 
 .login form .input,
@@ -341,12 +345,13 @@ body.interim-login {
     }
 
     body{
-        background: url('https://media.yjzan.com/pic/6D2B19F168914A44AFA1B0FFBD567B45');
-        background-repeat: no-repeat;
-        background-size: auto;
-        background-size: 90%;
-        background-repeat: no-repeat;
-        background-position: center 350px;
+        /*background: url('https://media.yjzan.com/pic/6D2B19F168914A44AFA1B0FFBD567B45');*/
+        /*background-repeat: no-repeat;*/
+        /*background-size: auto;*/
+        /*background-size: 90%;*/
+        /*background-repeat: no-repeat;*/
+        /*background-position: center 350px;*/
+        background: #fff;
     }
     .yjz-login-warp{
         width: 100%;
@@ -380,7 +385,8 @@ body.interim-login {
     border-radius: 5px;
 }
 .yjz-login-div ::placeholder {font-size: 14px;color: #aaa;}
-.yjz-login-div #registerform label { display: none;font-size: 12px;}
+
+.yjz-login-div #registerform label { visibility: hidden;font-size: 12px;}
 .yjz-login-div .fa { cursor: pointer;color: #aaa;}
 .yjz-login-div .check-code-wrap #check_code{
     width: calc(100% - 100px);
