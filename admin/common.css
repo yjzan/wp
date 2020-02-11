@@ -2242,10 +2242,11 @@ h1.nav-tab-wrapper, /* Back-compat for pre-4.4 */
 .metabox-holder .postbox > h3, /* Back-compat for pre-4.4 */
 .metabox-holder h3.hndle, /* Back-compat for pre-4.4 */
 .metabox-holder h2.hndle {
-	font-size: 14px;
+	font-size: 13px;
 	padding: 8px 12px;
 	margin: 0;
 	line-height: 1.4;
+	letter-spacing: 2px;
 }
 
 /* Back-compat for nav-menus screen */

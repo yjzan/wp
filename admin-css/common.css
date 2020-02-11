@@ -3962,9 +3962,9 @@ img {
 	background-size: cover;
 }
 .postbox .hndle.ui-sortable-handle {
-	height: 35px;
-	line-height: 35px;
-	background:#0888C4;
+	height: 22px;
+	line-height: 22px;
+	background:#0872A4;
 	color:#fff;
 }
 .postbox .toggle-indicator {
@@ -7937,8 +7937,8 @@ img {
 	background-size: cover;
 }
 .postbox .hndle.ui-sortable-handle {
-	height: 35px;
-	line-height: 35px;
+	height: 22px;
+	line-height: 22px;
 	background:#0888C4;
 	color:#fff;
 }
