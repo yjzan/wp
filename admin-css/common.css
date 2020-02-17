@@ -7959,3 +7959,5 @@ img {
 .wx-setting-title::before{
 	padding-right: 5px;
 }
+
+.striped > tbody tr:hover {background:#e0e5ec;}
