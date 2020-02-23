@@ -285,6 +285,8 @@ body.interim-login {
 }
 .yjz-login-img img{
     width: 100%;
+    object-fit: cover;
+    height: 600px;
 }
 .wxicon i.fa-weixin {
     color:#33ac11;
