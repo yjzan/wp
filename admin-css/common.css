@@ -7961,3 +7961,4 @@ img {
 }
 
 .striped > tbody tr:hover {background:#e0e5ec;}
+.column-price .salse-price-tag {padding-left: 2px;display: block;}
