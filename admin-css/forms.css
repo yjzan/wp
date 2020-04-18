@@ -1581,3 +1581,10 @@ table.form-table td .updated p {
 tr.wp_weixin-main-section th ,tr.wp_weixin-mini-wx-section th ,tr.wp_weixin-ecommerce-section th,tr.wp_weixin-notice-section th{
 	font-weight: inherit!important;
 }
+
+input.upload_file_cert{
+	background: #fff!important;
+	overflow: hidden;
+	width: 200px;
+	font-size: 14px;
+}

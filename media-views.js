@@ -4846,6 +4846,8 @@
                 /** by jack*/
                 $(".media-button").removeData('yjzpicurl');
                 $(".media-button").removeData('yjz_is_single');
+
+                setInterval( this.imglazyload, 1000);
             },
 
             prepare: function() {
@@ -4937,6 +4939,23 @@
                         // Move focus back to the toggle button when closing the uploader.
                         .focus();
                 }
+            },
+            imglazyload:function(){ //by jack
+                $('img.lazy:not(.imgfinish)').lazyload({
+                    threshold: 20,                    //当图片顶部距离显示区域还有100像素时，就开始加载
+                    placeholder : "https://media.yjzan.com/pic/3F4FFD8CF5AB6F5839BD69DA3ABCE84D",      // 图片未加载时，占位
+                    effect: "fadeIn",               // 图片出现的效果，值有show(直接显示),fadeIn(淡入),slideDown(下拉)
+                    effect_speed: 0,                // 效果出现的时间
+                    data_attribute: 'original',        // img标签中保存url的自定义属性，默认：data-original
+                    skip_invisible: true,              // 是否跳过已经隐藏的图片（display:none）
+                    failure_limit: 20,                  // 由于延迟加载是根据Dom从上到下执行
+                    appear: function(){                // 当图片位置刚出现在视图时，触发此事件
+                        $(this).addClass('imgfinish');
+                    },
+                    load: function(){                  // 当图片路径加载之后，触发此事件
+                        $(this).addClass('imgfinish');
+                    }
+                });
             }
 
         });
@@ -7900,6 +7919,24 @@
                 this.$el.toggleClass( 'editing', editing );
 
                 this.$('.count').text( l10n.selected.replace('%d', collection.length) );
+
+
+                this.imglazyload();
+
+            },imglazyload:function () {
+                this.$('img.lazy:not(.imgfinish)').lazyload({
+                    threshold: 20,                    //当图片顶部距离显示区域还有100像素时，就开始加载
+                    placeholder : "https://media.yjzan.com/pic/3F4FFD8CF5AB6F5839BD69DA3ABCE84D",      // 图片未加载时，占位
+                    effect: "fadeIn",               // 图片出现的效果，值有show(直接显示),fadeIn(淡入),slideDown(下拉)
+                    effect_speed: 20,                // 效果出现的时间
+                    data_attribute: 'original',        // img标签中保存url的自定义属性，默认：data-original
+                    appear: function(){                // 当图片位置刚出现在视图时，触发此事件
+                        $(this).addClass('imgfinish');
+                    },
+                    load: function(){                  // 当图片路径加载之后，触发此事件
+                        $(this).addClass('imgfinish');
+                    }
+                });
             },
 
             edit: function( event ) {
