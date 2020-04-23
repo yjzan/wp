@@ -722,10 +722,8 @@ tinymce.PluginManager.add( 'wordpress', function( editor ) {
 			wpStatusbar,
 			isChromeRtl = ( editor.rtl && /Chrome/.test( navigator.userAgent ) );
 
-			if ( container ) {
-				mceToolbar = tinymce.$( '.mce-toolbar-grp', container )[0];
-				mceStatusbar = tinymce.$( '.mce-statusbar', container )[0];
-			}
+       		mceToolbar = tinymce.$( '.mce-toolbar-grp', container )[0];
+        	mceStatusbar = tinymce.$( '.mce-statusbar', container )[0];
 
 			if ( editor.id === 'content' ) {
 				wpStatusbar = document.getElementById( 'post-status-info' );

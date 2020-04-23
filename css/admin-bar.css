@@ -121,7 +121,9 @@ html:lang(he-il) .rtl #wpadminbar *  {
 
 #wpadminbar .quicklinks .ab-top-secondary > li {
     float: right;
-    width: 150px;
+    max-width: 300px;
+    overflow: hidden;
+    margin-right: 30px;
 }
 
 #wpadminbar .quicklinks a,

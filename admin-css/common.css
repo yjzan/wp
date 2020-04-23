@@ -7962,3 +7962,4 @@ img {
 
 .striped > tbody tr:hover {background:#e0e5ec;}
 .column-price .salse-price-tag {padding-left: 2px;display: block;}
+table.wp-list-table tr.status-pending {background: rgba(255, 194, 23, 0.14);}

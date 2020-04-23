@@ -228,8 +228,8 @@ textarea[readonly] {
 }
 
 ::-moz-placeholder {
-   color: #b5b8bc;
-   opacity: 1;
+	color: #b5b8bc;
+	opacity: 1;
 }
 
 :-ms-input-placeholder {
@@ -239,7 +239,7 @@ textarea[readonly] {
 .form-invalid input, .form-invalid input:focus,
 .form-invalid select, .form-invalid select:focus {
 	border-color: #dc3232 !important;
- box-shadow: 0 0 2px rgba( 204, 0, 0, 0.8 );
+	box-shadow: 0 0 2px rgba( 204, 0, 0, 0.8 );
 }
 
 .form-table .form-required.form-invalid td:after {
@@ -538,8 +538,12 @@ p.search-box {
 .tablenav .search-plugins input[name="s"],
 .tagsdiv .newtag {
 	float: left;
-	height: 28px;
+	min-width: 280px;
+	height: 40px;
 	margin: 0 4px 0 0;
+}
+.search-box .button{
+	height: 40px!important;
 }
 
 .js.plugins-php .search-box .wp-filter-search {
@@ -972,8 +976,8 @@ table.form-table td .updated p {
 }
 
 #request-filesystem-credentials-title {
-    font-size: 1.3em;
-    margin: 1em 0;
+	font-size: 1.3em;
+	margin: 1em 0;
 }
 
 .request-filesystem-credentials-form legend {
@@ -1490,21 +1494,21 @@ table.form-table td .updated p {
 
 	/* Privacy Policy settings screen */
 	.tools-privacy-policy-page form.wp-create-privacy-page {
-	    margin-bottom: 1em;
+		margin-bottom: 1em;
 	}
 
- 	.tools-privacy-policy-page input#set-page,
+	.tools-privacy-policy-page input#set-page,
 	.tools-privacy-policy-page select {
 		margin: 10px 0 0;
 	}
 
 	.tools-privacy-policy-page .wp-create-privacy-page span {
-	    display: block;
-	    margin-bottom: 1em;
+		display: block;
+		margin-bottom: 1em;
 	}
 
 	.tools-privacy-policy-page .wp-create-privacy-page .button {
-	    margin-left: 0;
+		margin-left: 0;
 	}
 
 	.wp-list-table.privacy_requests tr:not(.inline-edit-row):not(.no-items) td.column-primary:not(.check-column) {

@@ -537,7 +537,7 @@
 						width: contentWrapWidth - ( borderWidth * 2 ) - ( visual ? 0 : ( $top.outerWidth() - $top.width() ) )
 					} );
 
-					$statusBar.attr( 'style', advanced ? '' : 'visibility: hidden;' );
+					// $statusBar.attr( 'style', advanced ? '' : 'visibility: hidden;' );
 					$bottom.attr( 'style', '' );
 				}
 			} else {
@@ -643,7 +643,7 @@
 						( windowPos + heights.windowHeight ) > ( editorPos + editorHeight + heights.bottomHeight + heights.statusBarHeight - borderWidth ) ) ) {
 					fixedBottom = false;
 
-					$statusBar.attr( 'style', advanced ? '' : 'visibility: hidden;' );
+					//$statusBar.attr( 'style', advanced ? '' : 'visibility: hidden;' );
 					$bottom.attr( 'style', '' );
 				}
 			}
