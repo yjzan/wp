@@ -7,8 +7,8 @@ html:lang(he-il) .rtl #wpadminbar *{font-family:Arial,sans-serif}
 #wpadminbar ul li:after,#wpadminbar ul li:before{content:normal}
 #wpadminbar a,#wpadminbar a img,#wpadminbar a img:hover,#wpadminbar a:hover{outline:0;border:none;text-decoration:none;background:0 0}
 #wpadminbar a:active,#wpadminbar a:focus,#wpadminbar div,#wpadminbar input[type=email],#wpadminbar input[type=number],#wpadminbar input[type=password],#wpadminbar input[type=search],#wpadminbar input[type=text],#wpadminbar input[type=url],#wpadminbar select,#wpadminbar textarea{box-shadow:none;outline:0}
-#wpadminbar{direction:ltr;color:#ccc;font-size:15px;font-weight:400;line-height:29px;height:32px;position:fixed;top:0;left:0;width:100%;min-width:600px;z-index:99999;background:#23282d;-webkit-transition:all .5s;-o-transition:all .5s;transition:all .5s}
-#wpadminbar .ab-sub-wrapper,#wpadminbar ul,#wpadminbar ul li{background:0 0;clear:none;list-style:none;margin:0;padding:0;position:relative;text-indent:0;z-index:99999}
+#wpadminbar{direction:ltr;color:#ccc;font-size:15px;font-weight:400;line-height:29px;height:32px;position:fixed;top:0;left:0;width:100%;min-width:600px;z-index:999;background:#23282d;-webkit-transition:all .5s;-o-transition:all .5s;transition:all .5s}
+#wpadminbar .ab-sub-wrapper,#wpadminbar ul,#wpadminbar ul li{background:0 0;clear:none;list-style:none;margin:0;padding:0;position:relative;text-indent:0;z-index:999}
 #wpadminbar ul#wp-admin-bar-root-default>li{margin-right:0}
 #wpadminbar .quicklinks ul{text-align:left}
 #wpadminbar li{float:left}
@@ -169,6 +169,6 @@ html:lang(he-il) .rtl #wpadminbar *{font-family:Arial,sans-serif}
 }
 @media screen and (max-width:400px){#wpadminbar li#wp-admin-bar-comments{display:none}
 }
-.showwpadminbar{display:none;width:50px;position:fixed;top:-3px;right:20%;background:#23282d;color:#fff;text-align:center;height:24px;border-radius:5px;padding:0;cursor:pointer;z-index:99}
+.showwpadminbar{display:none;width:50px;position:fixed;top:-3px;right:20%;background:#23282d;color:#fff;text-align:center;height:24px;border-radius:5px;padding:0;cursor:pointer;z-index:999}
 #wp-admin-bar-yjz-mac i,#wp-admin-bar-yjz-mobile i,#wp-admin-bar-yjz-tablet i{cursor:pointer}
 .ab-top-menu .ab-item i.active{background:#32373c;color:#00b9eb}

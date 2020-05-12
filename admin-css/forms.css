@@ -374,7 +374,10 @@ textarea.large-text {
 .regular-text {
 	width: 25em;
 }
-
+.regular-text.ys_others_ysshinfo
+{
+	width:100%
+}
 input.small-text {
 	width: 50px;
 	padding: 1px 6px;
