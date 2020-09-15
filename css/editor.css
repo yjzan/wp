@@ -1055,6 +1055,7 @@ i.mce-i-wp_code:before {
 
 /* Editors */
 .wp-editor-wrap {
+	z-index: 1;
 	position: relative;
 }
 
@@ -1874,4 +1875,5 @@ html:lang(he-il) .rtl .quicktags-toolbar input  {
 }
 .editorPreviewIconList i {
     padding-right: 12px;
+	cursor: pointer;
 }

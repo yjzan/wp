@@ -1151,33 +1151,33 @@ var showNotice, adminMenu, columns, validateForm, screenMeta;
 
 }( jQuery, window ));
 
-//
-// $(function(){
-//
-//     setTimeout(function(){
-//         if($("#content_ifr").length>0)
-//         {
-//             setInterval(editor_imglazyload, 1000);
-//         }
-//
-//         function editor_imglazyload() {
-//             $("#content_ifr").contents().find('img.lazy:not(.imgfinish):not(.imgprefinish)').lazyload({
-//                 placeholder : "https://cdn.jsdelivr.net/gh/yjzan/other/img/lazyimgbg.jpg",      // 图片未加载时，占位
-//                 effect: "fadeIn",               // 图片出现的效果，值有show(直接显示),fadeIn(淡入),slideDown(下拉)
-//                 effect_speed: 100,                // 效果出现的时间
-//                 event: 'scroll',                   // 滚动滚轮时触发，可以是：click、mouseover等
-//                 data_attribute: 'original',        // img标签中保存url的自定义属性，默认：data-original
-//                 skip_invisible: false,              // 是否跳过已经隐藏的图片（display:none）
-//                 appear: function(){                // 当图片位置刚出现在视图时，触发此事件
-//                     $(this).addClass('imgfinish');
-//                 },
-//                 load: function(){                  // 当图片路径加载之后，触发此事件
-//                     $(this).addClass('imgfinish');
-//                 }
-//             });
-//
-//             $("#content_ifr").contents().find('img.lazy:not(.imgfinish):not(.imgprefinish)').addClass('imgprefinish');
-//         }
-//
-//     },3000);
-// });
+
+function setBatchAttrImg(obj){
+    var vid = $(obj).attr('data-vid');
+    var frist_atr_val =  $("#pattr_0_"+vid).val();
+
+    var imgid = $(".w_var_"+vid).find('.upload_image_button .upload_image_id').val();
+    var tempsrc = $(".w_var_"+vid).find('.upload_image_button img').attr('src');
+
+    $(".woocommerce_variation").each(function () {
+        var tempid = $(this).attr('data-vid');
+        var temp_atr_val =  $(this).find("#pattr_0_"+tempid).val();
+        if(temp_atr_val == frist_atr_val)
+        {
+            if(imgid=='')
+            {
+                $(this).find('.upload_image_button .upload_image_id').val('');
+                $(this).find('.upload_image_button img').attr('src',tempsrc);
+                $(this).find('.upload_image_button.tips').removeClass('remove');
+            }else
+            {
+                $(this).find('.upload_image_button .upload_image_id').val(imgid);
+                $(this).find('.upload_image_button img').attr('src',tempsrc);
+                $(this).find('.upload_image_button.tips').addClass('remove');
+            }
+            $(this).addClass('variation-needs-update');
+            $( 'button.cancel-variation-changes, button.save-variation-changes' ).removeAttr( 'disabled' );
+        }
+    });
+
+}

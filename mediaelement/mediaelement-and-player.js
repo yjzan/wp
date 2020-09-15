@@ -6494,7 +6494,7 @@ var NativeHls = {
 				NativeHls._createPlayer(settings);
 			});
 		} else {
-			settings.options.path = typeof settings.options.path === 'string' ? settings.options.path : 'https://cdn.jsdelivr.net/npm/hls.js@0.12.2/dist/hls.js';
+			settings.options.path = typeof settings.options.path === 'string' ? settings.options.path : 'https://cdn.jsdelivr.net/npm/hls.js@0.12.2/dist/hls.min.js';
 
 			NativeHls.promise = NativeHls.promise || (0, _dom.loadScript)(settings.options.path);
 			NativeHls.promise.then(function () {
@@ -6517,7 +6517,7 @@ var HlsNativeRenderer = {
 	options: {
 		prefix: 'native_hls',
 		hls: {
-			path: 'https://cdn.jsdelivr.net/npm/hls.js@0.12.2/dist/hls.js',
+			path: 'https://cdn.jsdelivr.net/npm/hls.js@0.12.2/dist/hls.min.js',
 
 			autoStartLoad: false,
 			debug: false

@@ -1,7 +1,6 @@
 /******/ (function(modules) { // webpackBootstrap
     /******/ 	// The module cache
     /******/ 	var installedModules = {};
-    /******/
     /******/ 	// The require function
     /******/ 	function __webpack_require__(moduleId) {
         /******/
@@ -4846,8 +4845,13 @@
                 /** by jack*/
                 $(".media-button").removeData('yjzpicurl');
                 $(".media-button").removeData('yjz_is_single');
-
-                setInterval( this.imglazyload, 1000);
+               // setInterval( this.imglazyload, 1000);
+                //this.imglazyload();
+                // $('img.lazy:not(".imgfinish")').each(function () {
+                //     var url = $(this).attr('data-original');
+                //     $(this).attr('src',url);
+                //     $(this).addClass('imgfinish');
+                // });
             },
 
             prepare: function() {
@@ -4923,6 +4927,19 @@
                 }
 
                 this.refresh();
+
+                var myobj = this;
+                $('.attachments-browser ul.attachments').scroll(function () {
+                    window.time_scroll = (new Date()).valueOf();
+                    clearTimeout(window.loadimgaction);
+                    window.loadimgaction = setTimeout(function () {
+                        myobj.imglazyload();
+                    },100);
+                });
+
+                setTimeout(myobj.imglazyload,1000);
+                setTimeout(myobj.imglazyload,2000);
+                setTimeout(myobj.imglazyload,4000);
                 return this;
             },
             show: function() {
@@ -4941,14 +4958,15 @@
                 }
             },
             imglazyload:function(){ //by jack
+                $('img.lazy:not(".imgfinish")').unbind();
                 $('img.lazy:not(.imgfinish)').lazyload({
-                    threshold: 100,                    //当图片顶部距离显示区域还有100像素时，就开始加载
-                    placeholder : "https://cdn.jsdelivr.net/gh/yjzan/other/img/lazyimgbg.jpg",      // 图片未加载时，占位
+                    threshold: 10,                    //当图片顶部距离显示区域还有100像素时，就开始加载
+                    placeholder : "https://cdn.jsdelivr.net/npm/yjzan2020/other/img/lazyimgbg2.jpg",      // 图片未加载时，占位
                     effect: "fadeIn",               // 图片出现的效果，值有show(直接显示),fadeIn(淡入),slideDown(下拉)
-                    effect_speed: 200,                // 效果出现的时间
+                    effect_speed: 100,                // 效果出现的时间
                     data_attribute: 'original',        // img标签中保存url的自定义属性，默认：data-original
                     skip_invisible: true,              // 是否跳过已经隐藏的图片（display:none）
-                    failure_limit: 20,                  // 由于延迟加载是根据Dom从上到下执行
+                    failure_limit: 10,                  // 由于延迟加载是根据Dom从上到下执行
                     appear: function(){                // 当图片位置刚出现在视图时，触发此事件
                         $(this).addClass('imgfinish');
                     },
@@ -5508,7 +5526,7 @@
                 if(this.controller.content._mode == 'yjzlib')
                 {
                     var buttonhtml =  $('.media-toolbar-primary .button').html();
-                    $('.media-toolbar-primary .button').html("加载中  <img src='https://cdn.jsdelivr.net/gh/yjzan/WPPACKLIB@latest/images/loading.gif'>");
+                    $('.media-toolbar-primary .button').html("加载中  <img src='https://cdn.jsdelivr.net/npm/yjzan2020/WPPACKLIB/images/loading.gif'>");
 
                     var yjz_models = this.controller.state().attributes.selection.models;
 
@@ -7919,14 +7937,13 @@
                 this.$el.toggleClass( 'editing', editing );
 
                 this.$('.count').text( l10n.selected.replace('%d', collection.length) );
-
-
                 this.imglazyload();
 
             },imglazyload:function () {
+                this.$('img.lazy:not(.imgfinish)').unbind();
                 this.$('img.lazy:not(.imgfinish)').lazyload({
                     threshold: 100,                    //当图片顶部距离显示区域还有100像素时，就开始加载
-                    placeholder : "https://cdn.jsdelivr.net/gh/yjzan/other/img/lazyimgbg.jpg",      // 图片未加载时，占位
+                    placeholder : "https://cdn.jsdelivr.net/npm/yjzan2020/other/img/lazyimgbg2.jpg",      // 图片未加载时，占位
                     effect: "fadeIn",               // 图片出现的效果，值有show(直接显示),fadeIn(淡入),slideDown(下拉)
                     effect_speed: 200,                // 效果出现的时间
                     data_attribute: 'original',        // img标签中保存url的自定义属性，默认：data-original
@@ -9500,9 +9517,17 @@
                 var scrollTop = $(".yjz-piclib-box" )[0].scrollTop;
                 var divHeight = $(".yjz-piclib-box")[0].clientHeight;
                 var scrollHeight  = $(".yjz-piclib-box")[0].scrollHeight;
-                // console.log('scrollTop + divHeight:'+scrollTop + divHeight);
-                // console.log('\nscrollHeight:'+ scrollHeight);
-                if (scrollTop!=0 && (scrollTop + divHeight  >= scrollHeight)) {
+
+                if (scrollTop!=0 && (scrollTop + divHeight+5 >= scrollHeight)) {
+
+                    if($(".yjz-piclib-box").attr('data-loading')==1)
+                    {
+                        return false;
+                    }
+
+                    $(".yjz-piclib-box").attr('data-loading',1);
+                    setTimeout(function(){$(".yjz-piclib-box").attr('data-loading',0)},2000);
+
                     var atType =  $("#yjz-attachment-type").val();
                     if(atType =='image')
                     {
@@ -9607,10 +9632,10 @@
                     jmodel.icon = thumb_icon;
                 }else
                 {
-                    jmodel.sizes.thumbnail.url = item.indexOf('media.yjzan.com')==-1? item: item+'/150 ';
-                    jmodel.sizes.medium.url = item.indexOf('media.yjzan.com')==-1? item: item+'/300';
-                    jmodel.sizes.medium_large.url = item.indexOf('media.yjzan.com')==-1? item: item+'/765';
-                    jmodel.sizes.large.url = item.indexOf('media.yjzan.com')==-1? item: item+'/1024';
+                    jmodel.sizes.thumbnail.url = item.indexOf('media.yjzan')==-1? item: item+'/150 ';
+                    jmodel.sizes.medium.url = item.indexOf('media.yjzan')==-1? item: item+'/300';
+                    jmodel.sizes.medium_large.url = item.indexOf('media.yjzan')==-1? item: item+'/765';
+                    jmodel.sizes.large.url = item.indexOf('media.yjzan')==-1? item: item+'/1024';
                     jmodel.sizes.full.url = item;
                     jmodel.sizes.full.url = item;
                 }

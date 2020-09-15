@@ -374,10 +374,7 @@ textarea.large-text {
 .regular-text {
 	width: 25em;
 }
-.regular-text.ys_others_ysshinfo
-{
-	width:100%
-}
+
 input.small-text {
 	width: 50px;
 	padding: 1px 6px;
@@ -541,10 +538,15 @@ p.search-box {
 .tablenav .search-plugins input[name="s"],
 .tagsdiv .newtag {
 	float: left;
-	min-width: 280px;
-	height: 40px;
 	margin: 0 4px 0 0;
 }
+
+.search-box input[name="s"],
+.tablenav .search-plugins input[name="s"]{
+	min-width: 280px;
+	height: 40px;
+}
+
 .search-box .button{
 	height: 40px!important;
 }

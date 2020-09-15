@@ -7688,7 +7688,7 @@ var modern = (function () {
     };
   };
   var getFontSizeItems = function (editor) {
-    var defaultFontsizeFormats = '8pt 10pt 12pt 14pt 18pt 24pt 36pt';
+    var defaultFontsizeFormats = '8px 10px 11px 12px 13px 14px 16px 18px 24px 36px 42px';
     var fontsizeFormats = editor.settings.fontsize_formats || defaultFontsizeFormats;
     return global$2.map(fontsizeFormats.split(' '), function (item) {
       var text = item, value = item;

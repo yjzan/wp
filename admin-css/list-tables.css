@@ -1103,7 +1103,7 @@ tr.inline-edit-row td,
 }
 
 ul.cat-checklist {
-    height: 35em;
+    height: 30em;
     border: solid 1px #ddd;
     overflow-y: scroll;
     padding: 0 5px;
